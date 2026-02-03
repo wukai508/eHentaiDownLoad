@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="128" height="128" rx="20" fill="url(#bg128)"/>
+  
+  <!-- 书本 -->
+  <g transform="translate(20, 18)">
+    <path d="M44 4 L44 68 Q22 64 4 68 L4 12 Q22 8 44 4 Z" fill="white" opacity="0.95"/>
+    <path d="M44 4 L44 68 Q66 64 84 68 L84 12 Q66 8 44 4 Z" fill="white" opacity="0.9"/>
+    <line x1="44" y1="4" x2="44" y2="68" stroke="#667eea" stroke-width="2"/>
+    
+    <!-- 左页线条 -->
+    <line x1="14" y1="24" x2="36" y2="21" stroke="#667eea" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="14" y1="36" x2="36" y2="33" stroke="#667eea" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="14" y1="48" x2="36" y2="45" stroke="#667eea" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    
+    <!-- 右页线条 -->
+    <line x1="52" y1="21" x2="74" y2="24" stroke="#764ba2" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="52" y1="33" x2="74" y2="36" stroke="#764ba2" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="52" y1="45" x2="74" y2="48" stroke="#764ba2" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  
+  <!-- 下载箭头 -->
+  <g transform="translate(64, 102)">
+    <circle cx="0" cy="0" r="16" fill="rgba(255,255,255,0.2)"/>
+    <path d="M0 -8 L0 4 M-6 0 L0 7 L6 0" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <line x1="-7" y1="9" x2="7" y2="9" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Hentai Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">E-Hentai Downloader</span>
+            </div>
+        </header>
+
+        <!-- 状态提示 -->
+        <div id="notGalleryTip" class="tip-card hidden">
+            <div class="tip-icon">⚠️</div>
+            <div class="tip-text">请在 E-Hentai 漫画目录页使用此插件</div>
+        </div>
+
+        <!-- 主内容区 -->
+        <main id="mainContent" class="main-content hidden">
+            <!-- 漫画信息卡片 -->
+            <div class="info-card">
+                <div class="info-header">
+                    <span class="info-icon">📖</span>
+                    <span class="info-label">漫画名称</span>
+                </div>
+                <div id="galleryTitle" class="gallery-title">加载中...</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-item">
+                    <span class="info-icon">📄</span>
+                    <span class="info-label">图片数量</span>
+                    <span id="pageCount" class="info-value">--</span>
+                </div>
+            </div>
+
+            <!-- 下载方式选择 -->
+            <div class="download-mode">
+                <div class="mode-label">下载方式</div>
+                <div class="mode-buttons">
+                    <button id="modeDirectBtn" class="mode-btn active" data-mode="direct">
+                        <span class="mode-icon">📥</span>
+                        <span class="mode-text">直接下载</span>
+                    </button>
+                    <button id="modeZipBtn" class="mode-btn" data-mode="zip">
+                        <span class="mode-icon">📦</span>
+                        <span class="mode-text">打包下载</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 进度区域 -->
+            <div id="progressSection" class="progress-section hidden">
+                <div class="progress-header">
+                    <span class="progress-label">下载进度</span>
+                    <span id="progressPercent" class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <div class="progress-stats">
+                    <span>已完成: <span id="completedCount">0</span>/<span id="totalCount">0</span></span>
+                    <span>失败: <span id="failedCount">0</span></span>
+                </div>
+                <div id="currentFile" class="current-file"></div>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="action-buttons">
+                <button id="startBtn" class="btn-primary">
+                    <span class="btn-icon">🚀</span>
+                    <span class="btn-text">开始下载</span>
+                </button>
+                <button id="cancelBtn" class="btn-secondary hidden">
+                    <span class="btn-icon">⏹️</span>
+                    <span class="btn-text">取消下载</span>
+                </button>
+            </div>
+
+            <!-- 完成提示 -->
+            <div id="completeSection" class="complete-section hidden">
+                <div class="complete-icon">✅</div>
+                <div class="complete-text">下载完成！</div>
+                <div class="complete-stats">
+                    成功 <span id="successCount">0</span> 张，失败 <span id="failCount">0</span> 张
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <span>仅供学习研究使用</span>
+        </footer>
+    </div>
+
+    <script src="../lib/jszip.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
