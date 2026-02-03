@@ -79,7 +79,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // 开始下载 (从指定标签页)
 async function startDownloadFromTab(tabId, galleryInfo, mode) {
     if (downloadState.isDownloading) {
-        throw new Error('已有下载任务进行中');
+        throw new Error(chrome.i18n.getMessage('errorDownloadInProgress'));
     }
 
     // 初始化状态
@@ -98,11 +98,11 @@ async function startDownloadFromTab(tabId, galleryInfo, mode) {
     try {
         // 第一步：获取所有页面链接
         console.log('[E-Hentai Downloader] 步骤1: 从标签页获取页面链接...');
-        notifyProgress('正在解析页面链接...');
+        notifyProgress(chrome.i18n.getMessage('statusParsingLinks'));
 
         const response = await chrome.tabs.sendMessage(tabId, { action: 'getPageLinks' });
         if (!response || !response.success) {
-            throw new Error('获取页面链接失败');
+            throw new Error(chrome.i18n.getMessage('errorGetPageLinks'));
         }
 
         const pageLinks = response.data;
@@ -112,7 +112,7 @@ async function startDownloadFromTab(tabId, galleryInfo, mode) {
 
         // 第二步：从每个页面获取真实图片地址
         console.log('[E-Hentai Downloader] 步骤2: 解析图片地址...');
-        notifyProgress('正在获取图片地址...');
+        notifyProgress(chrome.i18n.getMessage('statusGettingImages'));
         const imageUrls = await getAllImageUrls(pageLinks);
         console.log('[E-Hentai Downloader] 解析到图片地址数:', imageUrls.length);
 
@@ -140,7 +140,7 @@ async function startDownloadFromTab(tabId, galleryInfo, mode) {
 // 开始下载 (原有方法，用于 popup)
 async function startDownload(galleryInfo, mode) {
     if (downloadState.isDownloading) {
-        throw new Error('已有下载任务进行中');
+        throw new Error(chrome.i18n.getMessage('errorDownloadInProgress'));
     }
 
     // 初始化状态
@@ -159,7 +159,7 @@ async function startDownload(galleryInfo, mode) {
     try {
         // 第一步：获取所有页面链接
         console.log('[E-Hentai Downloader] 步骤1: 获取页面链接...');
-        notifyProgress('正在解析页面链接...');
+        notifyProgress(chrome.i18n.getMessage('statusParsingLinks'));
         const pageLinks = await getAllPageLinks(galleryInfo);
         console.log('[E-Hentai Downloader] 获取到页面链接数:', pageLinks.length);
         console.log('[E-Hentai Downloader] 页面链接示例:', pageLinks.slice(0, 3));
@@ -168,7 +168,7 @@ async function startDownload(galleryInfo, mode) {
 
         // 第二步：从每个页面获取真实图片地址
         console.log('[E-Hentai Downloader] 步骤2: 解析图片地址...');
-        notifyProgress('正在获取图片地址...');
+        notifyProgress(chrome.i18n.getMessage('statusGettingImages'));
         const imageUrls = await getAllImageUrls(pageLinks);
         console.log('[E-Hentai Downloader] 解析到图片地址数:', imageUrls.length);
         if (imageUrls.length > 0) {
@@ -211,7 +211,7 @@ async function getAllPageLinks(galleryInfo) {
     console.log('[E-Hentai Downloader] 当前标签页:', tab ? tab.id : 'null');
 
     if (!tab) {
-        throw new Error('无法获取当前标签页');
+        throw new Error(chrome.i18n.getMessage('errorGetCurrentTab'));
     }
 
     console.log('[E-Hentai Downloader] 向 content script 发送 getPageLinks 消息...');
@@ -224,7 +224,7 @@ async function getAllPageLinks(galleryInfo) {
     }
 
     console.error('[E-Hentai Downloader] 获取页面链接失败, 响应:', response);
-    throw new Error('获取页面链接失败');
+    throw new Error(chrome.i18n.getMessage('errorGetPageLinks'));
 }
 
 // 从页面获取真实图片地址
@@ -245,7 +245,7 @@ async function getAllImageUrls(pageLinks) {
             }
 
             // 更新进度
-            updateProgress(i + 1, pageLinks.length, 0, `解析第 ${i + 1}/${pageLinks.length} 页`);
+            updateProgress(i + 1, pageLinks.length, 0, chrome.i18n.getMessage('parsingPageFormat', [i + 1, pageLinks.length]));
 
             // 延迟避免请求过快
             if (i < pageLinks.length - 1) {
@@ -394,7 +394,7 @@ async function downloadAsZip(imageUrls, galleryTitle) {
 
     // 生成 ZIP 文件
     console.log('[E-Hentai Downloader] 开始生成 ZIP 文件...');
-    notifyProgress('正在打包文件...');
+    notifyProgress(chrome.i18n.getMessage('statusPackaging'));
 
     // 使用 base64 格式，因为 Service Worker 不支持 URL.createObjectURL
     const zipBase64 = await zip.generateAsync({

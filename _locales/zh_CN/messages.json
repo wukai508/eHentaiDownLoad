@@ -1,0 +1,204 @@
+{
+    "extName": {
+        "message": "E-Hentai Downloader",
+        "description": "插件名称"
+    },
+    "extDescription": {
+        "message": "下载 E-Hentai 漫画的 Chrome 插件，支持直接下载和打包下载",
+        "description": "插件描述"
+    },
+    "extActionTitle": {
+        "message": "E-Hentai Downloader - 点击打开",
+        "description": "插件图标悬停提示"
+    },
+    "appTitle": {
+        "message": "E-Hentai Downloader",
+        "description": "应用标题"
+    },
+    "appSubtitle": {
+        "message": "漫画下载工具",
+        "description": "应用副标题"
+    },
+    "statusDetecting": {
+        "message": "正在检测 E-Hentai 页面...",
+        "description": "检测状态提示"
+    },
+    "notGalleryTitle": {
+        "message": "未检测到漫画页面",
+        "description": "未找到漫画页面标题"
+    },
+    "notGalleryDesc": {
+        "message": "请在另一个标签页打开 E-Hentai 漫画目录页，然后点击下方按钮刷新",
+        "description": "未找到漫画页面描述"
+    },
+    "btnRefresh": {
+        "message": "重新检测",
+        "description": "重新检测按钮"
+    },
+    "labelGalleryName": {
+        "message": "漫画名称 (保存文件夹名)",
+        "description": "漫画名称标签"
+    },
+    "loading": {
+        "message": "加载中...",
+        "description": "加载中提示"
+    },
+    "editTitle": {
+        "message": "编辑名称",
+        "description": "编辑标题提示"
+    },
+    "placeholderFolderName": {
+        "message": "输入保存文件夹名称",
+        "description": "文件夹名称输入框占位符"
+    },
+    "btnConfirm": {
+        "message": "✓ 确定",
+        "description": "确定按钮"
+    },
+    "btnCancel": {
+        "message": "✕ 取消",
+        "description": "取消按钮"
+    },
+    "labelPageCount": {
+        "message": "图片数量",
+        "description": "图片数量标签"
+    },
+    "labelGalleryId": {
+        "message": "Gallery ID",
+        "description": "Gallery ID 标签"
+    },
+    "labelDownloadMode": {
+        "message": "选择下载方式",
+        "description": "下载方式标签"
+    },
+    "modeDirect": {
+        "message": "直接下载",
+        "description": "直接下载模式"
+    },
+    "modeDirectDesc": {
+        "message": "每张图片单独保存",
+        "description": "直接下载模式描述"
+    },
+    "modeZip": {
+        "message": "打包下载",
+        "description": "ZIP打包下载模式"
+    },
+    "modeZipDesc": {
+        "message": "所有图片打包为 ZIP",
+        "description": "ZIP打包下载模式描述"
+    },
+    "labelProgress": {
+        "message": "下载进度",
+        "description": "下载进度标签"
+    },
+    "statsCompleted": {
+        "message": "已完成",
+        "description": "已完成统计"
+    },
+    "statsFailed": {
+        "message": "失败",
+        "description": "失败统计"
+    },
+    "btnStartDownload": {
+        "message": "开始下载",
+        "description": "开始下载按钮"
+    },
+    "btnCancelDownload": {
+        "message": "取消下载",
+        "description": "取消下载按钮"
+    },
+    "downloadComplete": {
+        "message": "下载完成！",
+        "description": "下载完成提示"
+    },
+    "completeStatsFormat": {
+        "message": "成功 $SUCCESS$ 张，失败 $FAILED$ 张",
+        "description": "完成统计格式",
+        "placeholders": {
+            "success": {
+                "content": "$1",
+                "example": "100"
+            },
+            "failed": {
+                "content": "$2",
+                "example": "0"
+            }
+        }
+    },
+    "btnDownloadOther": {
+        "message": "下载其他漫画",
+        "description": "下载其他漫画按钮"
+    },
+    "footerVersion": {
+        "message": "E-Hentai Downloader v1.0.0 | 仅供学习研究使用",
+        "description": "页脚版本信息"
+    },
+    "pageCountFormat": {
+        "message": "$COUNT$ 页",
+        "description": "页数格式",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "processingFormat": {
+        "message": "正在处理: $FILENAME$",
+        "description": "处理文件格式",
+        "placeholders": {
+            "filename": {
+                "content": "$1",
+                "example": "001.jpg"
+            }
+        }
+    },
+    "errorPrefix": {
+        "message": "错误: $ERROR$",
+        "description": "错误提示前缀",
+        "placeholders": {
+            "error": {
+                "content": "$1",
+                "example": "下载失败"
+            }
+        }
+    },
+    "statusParsingLinks": {
+        "message": "正在解析页面链接...",
+        "description": "解析链接状态"
+    },
+    "statusGettingImages": {
+        "message": "正在获取图片地址...",
+        "description": "获取图片地址状态"
+    },
+    "statusPackaging": {
+        "message": "正在打包文件...",
+        "description": "打包文件状态"
+    },
+    "errorDownloadInProgress": {
+        "message": "已有下载任务进行中",
+        "description": "下载中错误提示"
+    },
+    "errorGetPageLinks": {
+        "message": "获取页面链接失败",
+        "description": "获取页面链接失败"
+    },
+    "errorGetCurrentTab": {
+        "message": "无法获取当前标签页",
+        "description": "获取标签页失败"
+    },
+    "parsingPageFormat": {
+        "message": "解析第 $CURRENT$/$TOTAL$ 页",
+        "description": "解析页面格式",
+        "placeholders": {
+            "current": {
+                "content": "$1",
+                "example": "10"
+            },
+            "total": {
+                "content": "$2",
+                "example": "100"
+            }
+        }
+    }
+}

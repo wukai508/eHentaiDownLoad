@@ -14,9 +14,9 @@
         <header class="header">
             <div class="logo">
                 <span class="logo-icon">📚</span>
-                <span class="logo-text">E-Hentai Downloader</span>
+                <span class="logo-text" data-i18n="appTitle">E-Hentai Downloader</span>
             </div>
-            <p class="subtitle">漫画下载工具</p>
+            <p class="subtitle" data-i18n="appSubtitle">漫画下载工具</p>
         </header>
 
         <!-- 主内容区 -->
@@ -24,17 +24,17 @@
             <!-- 连接状态 -->
             <div id="connectionStatus" class="status-card">
                 <div class="status-icon">🔍</div>
-                <div class="status-text">正在检测 E-Hentai 页面...</div>
+                <div class="status-text" data-i18n="statusDetecting">正在检测 E-Hentai 页面...</div>
             </div>
 
             <!-- 无页面提示 -->
             <div id="notGalleryTip" class="tip-card hidden">
                 <div class="tip-icon">⚠️</div>
-                <div class="tip-title">未检测到漫画页面</div>
-                <div class="tip-text">请在另一个标签页打开 E-Hentai 漫画目录页，然后点击下方按钮刷新</div>
+                <div class="tip-title" data-i18n="notGalleryTitle">未检测到漫画页面</div>
+                <div class="tip-text" data-i18n="notGalleryDesc">请在另一个标签页打开 E-Hentai 漫画目录页，然后点击下方按钮刷新</div>
                 <button id="refreshBtn" class="btn-secondary">
                     <span class="btn-icon">🔄</span>
-                    <span class="btn-text">重新检测</span>
+                    <span class="btn-text" data-i18n="btnRefresh">重新检测</span>
                 </button>
             </div>
 
@@ -44,17 +44,18 @@
                 <div class="info-card">
                     <div class="info-header">
                         <span class="info-icon">📖</span>
-                        <span class="info-label">漫画名称 (保存文件夹名)</span>
+                        <span class="info-label" data-i18n="labelGalleryName">漫画名称 (保存文件夹名)</span>
                     </div>
                     <div class="title-container">
-                        <div id="galleryTitle" class="gallery-title">加载中...</div>
-                        <button id="editTitleBtn" class="edit-btn" title="编辑名称">✏️</button>
+                        <div id="galleryTitle" class="gallery-title" data-i18n="loading">加载中...</div>
+                        <button id="editTitleBtn" class="edit-btn" data-i18n-title="editTitle" title="编辑名称">✏️</button>
                     </div>
                     <div id="titleEditContainer" class="title-edit-container hidden">
-                        <input type="text" id="titleInput" class="title-input" placeholder="输入保存文件夹名称">
+                        <input type="text" id="titleInput" class="title-input"
+                            data-i18n-placeholder="placeholderFolderName" placeholder="输入保存文件夹名称">
                         <div class="title-edit-actions">
-                            <button id="saveTitleBtn" class="btn-small btn-confirm">✓ 确定</button>
-                            <button id="cancelTitleBtn" class="btn-small btn-cancel">✕ 取消</button>
+                            <button id="saveTitleBtn" class="btn-small btn-confirm" data-i18n="btnConfirm">✓ 确定</button>
+                            <button id="cancelTitleBtn" class="btn-small btn-cancel" data-i18n="btnCancel">✕ 取消</button>
                         </div>
                     </div>
                 </div>
@@ -62,29 +63,29 @@
                 <div class="info-row">
                     <div class="info-item">
                         <span class="info-icon">📄</span>
-                        <span class="info-label">图片数量</span>
+                        <span class="info-label" data-i18n="labelPageCount">图片数量</span>
                         <span id="pageCount" class="info-value">--</span>
                     </div>
                     <div class="info-item">
                         <span class="info-icon">🔗</span>
-                        <span class="info-label">Gallery ID</span>
+                        <span class="info-label" data-i18n="labelGalleryId">Gallery ID</span>
                         <span id="galleryId" class="info-value">--</span>
                     </div>
                 </div>
 
                 <!-- 下载方式选择 -->
                 <div class="download-mode">
-                    <div class="mode-label">选择下载方式</div>
+                    <div class="mode-label" data-i18n="labelDownloadMode">选择下载方式</div>
                     <div class="mode-buttons">
                         <button id="modeDirectBtn" class="mode-btn active" data-mode="direct">
                             <span class="mode-icon">📥</span>
-                            <span class="mode-text">直接下载</span>
-                            <span class="mode-desc">每张图片单独保存</span>
+                            <span class="mode-text" data-i18n="modeDirect">直接下载</span>
+                            <span class="mode-desc" data-i18n="modeDirectDesc">每张图片单独保存</span>
                         </button>
                         <button id="modeZipBtn" class="mode-btn" data-mode="zip">
                             <span class="mode-icon">📦</span>
-                            <span class="mode-text">打包下载</span>
-                            <span class="mode-desc">所有图片打包为 ZIP</span>
+                            <span class="mode-text" data-i18n="modeZip">打包下载</span>
+                            <span class="mode-desc" data-i18n="modeZipDesc">所有图片打包为 ZIP</span>
                         </button>
                     </div>
                 </div>
@@ -92,15 +93,16 @@
                 <!-- 进度区域 -->
                 <div id="progressSection" class="progress-section hidden">
                     <div class="progress-header">
-                        <span class="progress-label">下载进度</span>
+                        <span class="progress-label" data-i18n="labelProgress">下载进度</span>
                         <span id="progressPercent" class="progress-percent">0%</span>
                     </div>
                     <div class="progress-bar">
                         <div id="progressFill" class="progress-fill"></div>
                     </div>
                     <div class="progress-stats">
-                        <span>已完成: <span id="completedCount">0</span>/<span id="totalCount">0</span></span>
-                        <span>失败: <span id="failedCount">0</span></span>
+                        <span><span data-i18n="statsCompleted">已完成</span>: <span id="completedCount">0</span>/<span
+                                id="totalCount">0</span></span>
+                        <span><span data-i18n="statsFailed">失败</span>: <span id="failedCount">0</span></span>
                     </div>
                     <div id="currentFile" class="current-file"></div>
                 </div>
@@ -109,24 +111,24 @@
                 <div class="action-buttons">
                     <button id="startBtn" class="btn-primary">
                         <span class="btn-icon">🚀</span>
-                        <span class="btn-text">开始下载</span>
+                        <span class="btn-text" data-i18n="btnStartDownload">开始下载</span>
                     </button>
                     <button id="cancelBtn" class="btn-danger hidden">
                         <span class="btn-icon">⏹️</span>
-                        <span class="btn-text">取消下载</span>
+                        <span class="btn-text" data-i18n="btnCancelDownload">取消下载</span>
                     </button>
                 </div>
 
                 <!-- 完成提示 -->
                 <div id="completeSection" class="complete-section hidden">
                     <div class="complete-icon">✅</div>
-                    <div class="complete-text">下载完成！</div>
-                    <div class="complete-stats">
+                    <div class="complete-text" data-i18n="downloadComplete">下载完成！</div>
+                    <div id="completeStats" class="complete-stats">
                         成功 <span id="successCount">0</span> 张，失败 <span id="failCount">0</span> 张
                     </div>
                     <button id="resetBtn" class="btn-secondary">
                         <span class="btn-icon">🔄</span>
-                        <span class="btn-text">下载其他漫画</span>
+                        <span class="btn-text" data-i18n="btnDownloadOther">下载其他漫画</span>
                     </button>
                 </div>
             </div>
@@ -134,7 +136,7 @@
 
         <!-- 页脚 -->
         <footer class="footer">
-            <span>E-Hentai Downloader v1.0.0 | 仅供学习研究使用</span>
+            <span data-i18n="footerVersion">E-Hentai Downloader v1.0.0 | 仅供学习研究使用</span>
         </footer>
     </div>
 

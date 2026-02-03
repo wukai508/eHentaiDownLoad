@@ -1,5 +1,38 @@
 // 完整页面脚本 - E-Hentai Downloader
 
+// 国际化初始化
+function initI18n() {
+    // 翻译所有带 data-i18n 属性的元素
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const message = chrome.i18n.getMessage(key);
+        if (message) {
+            element.textContent = message;
+        }
+    });
+
+    // 翻译所有带 data-i18n-placeholder 属性的元素
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const message = chrome.i18n.getMessage(key);
+        if (message) {
+            element.placeholder = message;
+        }
+    });
+
+    // 翻译所有带 data-i18n-title 属性的元素
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+        const key = element.getAttribute('data-i18n-title');
+        const message = chrome.i18n.getMessage(key);
+        if (message) {
+            element.title = message;
+        }
+    });
+
+    // 更新文档语言
+    document.documentElement.lang = chrome.i18n.getUILanguage();
+}
+
 // 全局状态
 let currentGalleryInfo = null;
 let downloadMode = 'direct';
@@ -12,6 +45,7 @@ const elements = {};
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
+    initI18n();
     initElements();
     initEventListeners();
     await findEHentaiTab();
@@ -125,9 +159,9 @@ function updateGalleryInfo() {
     if (!currentGalleryInfo) return;
 
     // 显示自定义名称或原始名称
-    const displayTitle = customTitle || currentGalleryInfo.title || '未知标题';
+    const displayTitle = customTitle || currentGalleryInfo.title || chrome.i18n.getMessage('loading');
     elements.galleryTitle.textContent = displayTitle;
-    elements.pageCount.textContent = `${currentGalleryInfo.pageCount || 0} 页`;
+    elements.pageCount.textContent = chrome.i18n.getMessage('pageCountFormat', [currentGalleryInfo.pageCount || 0]);
     elements.galleryId.textContent = currentGalleryInfo.galleryId || '--';
     elements.totalCount.textContent = currentGalleryInfo.pageCount || 0;
 }
@@ -235,7 +269,7 @@ function updateProgress(completed, total, failed, currentFileName = '') {
     elements.failedCount.textContent = failed;
 
     if (currentFileName) {
-        elements.currentFile.textContent = `正在处理: ${currentFileName}`;
+        elements.currentFile.textContent = chrome.i18n.getMessage('processingFormat', [currentFileName]);
     }
 }
 
@@ -245,12 +279,17 @@ function showComplete(success, failed) {
     elements.completeSection.classList.remove('hidden');
     elements.successCount.textContent = success;
     elements.failCount.textContent = failed;
+
+    // 更新完成统计文本
+    const completeStats = document.getElementById('completeStats');
+    completeStats.textContent = chrome.i18n.getMessage('completeStatsFormat', [success, failed]);
+
     resetDownloadUI();
 }
 
 // 显示错误
 function showError(message) {
-    elements.currentFile.textContent = `错误: ${message}`;
+    elements.currentFile.textContent = chrome.i18n.getMessage('errorPrefix', [message]);
     elements.currentFile.style.color = '#f87171';
 }
 

@@ -1,0 +1,204 @@
+{
+    "extName": {
+        "message": "E-Hentai Downloader",
+        "description": "Extension name"
+    },
+    "extDescription": {
+        "message": "Chrome extension for downloading E-Hentai manga, supports direct download and ZIP packaging",
+        "description": "Extension description"
+    },
+    "extActionTitle": {
+        "message": "E-Hentai Downloader - Click to Open",
+        "description": "Extension icon hover tooltip"
+    },
+    "appTitle": {
+        "message": "E-Hentai Downloader",
+        "description": "Application title"
+    },
+    "appSubtitle": {
+        "message": "Manga Download Tool",
+        "description": "Application subtitle"
+    },
+    "statusDetecting": {
+        "message": "Detecting E-Hentai page...",
+        "description": "Detection status message"
+    },
+    "notGalleryTitle": {
+        "message": "No Gallery Page Detected",
+        "description": "No gallery page found title"
+    },
+    "notGalleryDesc": {
+        "message": "Please open an E-Hentai gallery page in another tab, then click the button below to refresh",
+        "description": "No gallery page found description"
+    },
+    "btnRefresh": {
+        "message": "Refresh",
+        "description": "Refresh button"
+    },
+    "labelGalleryName": {
+        "message": "Gallery Name (Folder Name)",
+        "description": "Gallery name label"
+    },
+    "loading": {
+        "message": "Loading...",
+        "description": "Loading message"
+    },
+    "editTitle": {
+        "message": "Edit name",
+        "description": "Edit title tooltip"
+    },
+    "placeholderFolderName": {
+        "message": "Enter folder name",
+        "description": "Folder name input placeholder"
+    },
+    "btnConfirm": {
+        "message": "✓ Confirm",
+        "description": "Confirm button"
+    },
+    "btnCancel": {
+        "message": "✕ Cancel",
+        "description": "Cancel button"
+    },
+    "labelPageCount": {
+        "message": "Page Count",
+        "description": "Page count label"
+    },
+    "labelGalleryId": {
+        "message": "Gallery ID",
+        "description": "Gallery ID label"
+    },
+    "labelDownloadMode": {
+        "message": "Select Download Mode",
+        "description": "Download mode label"
+    },
+    "modeDirect": {
+        "message": "Direct Download",
+        "description": "Direct download mode"
+    },
+    "modeDirectDesc": {
+        "message": "Save images individually",
+        "description": "Direct download mode description"
+    },
+    "modeZip": {
+        "message": "ZIP Download",
+        "description": "ZIP download mode"
+    },
+    "modeZipDesc": {
+        "message": "Package all images as ZIP",
+        "description": "ZIP download mode description"
+    },
+    "labelProgress": {
+        "message": "Download Progress",
+        "description": "Download progress label"
+    },
+    "statsCompleted": {
+        "message": "Completed",
+        "description": "Completed stats"
+    },
+    "statsFailed": {
+        "message": "Failed",
+        "description": "Failed stats"
+    },
+    "btnStartDownload": {
+        "message": "Start Download",
+        "description": "Start download button"
+    },
+    "btnCancelDownload": {
+        "message": "Cancel Download",
+        "description": "Cancel download button"
+    },
+    "downloadComplete": {
+        "message": "Download Complete!",
+        "description": "Download complete message"
+    },
+    "completeStatsFormat": {
+        "message": "$SUCCESS$ succeeded, $FAILED$ failed",
+        "description": "Complete stats format",
+        "placeholders": {
+            "success": {
+                "content": "$1",
+                "example": "100"
+            },
+            "failed": {
+                "content": "$2",
+                "example": "0"
+            }
+        }
+    },
+    "btnDownloadOther": {
+        "message": "Download Another",
+        "description": "Download another gallery button"
+    },
+    "footerVersion": {
+        "message": "E-Hentai Downloader v1.0.0 | For Educational Purposes Only",
+        "description": "Footer version info"
+    },
+    "pageCountFormat": {
+        "message": "$COUNT$ pages",
+        "description": "Page count format",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "processingFormat": {
+        "message": "Processing: $FILENAME$",
+        "description": "Processing file format",
+        "placeholders": {
+            "filename": {
+                "content": "$1",
+                "example": "001.jpg"
+            }
+        }
+    },
+    "errorPrefix": {
+        "message": "Error: $ERROR$",
+        "description": "Error message prefix",
+        "placeholders": {
+            "error": {
+                "content": "$1",
+                "example": "Download failed"
+            }
+        }
+    },
+    "statusParsingLinks": {
+        "message": "Parsing page links...",
+        "description": "Parsing links status"
+    },
+    "statusGettingImages": {
+        "message": "Getting image URLs...",
+        "description": "Getting image URLs status"
+    },
+    "statusPackaging": {
+        "message": "Packaging files...",
+        "description": "Packaging files status"
+    },
+    "errorDownloadInProgress": {
+        "message": "Download already in progress",
+        "description": "Download in progress error"
+    },
+    "errorGetPageLinks": {
+        "message": "Failed to get page links",
+        "description": "Get page links failed"
+    },
+    "errorGetCurrentTab": {
+        "message": "Unable to get current tab",
+        "description": "Get current tab failed"
+    },
+    "parsingPageFormat": {
+        "message": "Parsing page $CURRENT$/$TOTAL$",
+        "description": "Parsing page format",
+        "placeholders": {
+            "current": {
+                "content": "$1",
+                "example": "10"
+            },
+            "total": {
+                "content": "$2",
+                "example": "100"
+            }
+        }
+    }
+}
